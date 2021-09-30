@@ -21,11 +21,12 @@ today_week = today_week.strftime("%d/%m/%Y")
 webhook = Webhook.from_url(DISCORD_WEBHOOK, adapter=RequestsWebhookAdapter())
 
 # This is my sheety Auth and endpoint to retrieve information from the spreadsheet.
-SHEETY_ENDPOINT="https://api.sheety.co/f0be23e4590eb37f6e75620bb5abc8d7/gradeBreakdownByModule/sheet1"
+SHEETY_ENDPOINT = os.getenv("SHEETY_ENDPOINT")
 
 # Sending an API request to SHEETY to get the data
 response = requests.get(url=f"{SHEETY_ENDPOINT}").json()
 sheet_details = response["sheet1"]
+
 
 # Looping through the sheet
 for assignment in sheet_details:
