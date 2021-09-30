@@ -1,6 +1,6 @@
 # DiscordBot
-*Contributors*
-*Daniel Gresak*
+*Contributors -*
+*Daniel Gresak,*
 *Vlad Rakhmanin (his idea)*
 
 ### Background
