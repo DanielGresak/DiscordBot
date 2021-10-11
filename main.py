@@ -31,10 +31,12 @@ sheet_details = response["sheet1"]
 # Looping through the sheet
 for assignment in sheet_details:
     # Checking if today's date is the same as the reminder date
-    if assignment["date"] == today_week:
-        # Sending message to discord.
-        message = f"We have an assignment, {assignment['assignment']} for {assignment['module']} due on the {assignment['date']}. " \
-                  f"This assignment is worth {assignment['percentage'] * 100}% of the module's final grade."
-        webhook.send(message)
-
-
+    try:
+        if assignment['date'] == today_week:
+            # Sending message to discord.
+            message = f"We have an assignment, {assignment['assignment']} for {assignment['module']} due on the {assignment['date']}. " \
+                      f"This assignment is worth {assignment['percentage'] * 100}% of the module's final grade."
+            webhook.send(message)
+    # Catch Keyerror's with spaces in sheet
+    except KeyError:
+        pass
