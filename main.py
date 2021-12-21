@@ -30,8 +30,11 @@ def get_sheet_deet():
     return response["sheet1"]
 
 
-def main(sheet_details, today_week):
+def main():
     # Looping through the sheet
+    sheet_details = get_sheet_deet()
+    webhook = get_webhook()
+    today_week = get_today_week()
     for assignment in sheet_details:
         # Checking if today's date is the same as the reminder date
         try:
@@ -39,11 +42,10 @@ def main(sheet_details, today_week):
                 # Sending message to discord.
                 message = f"We have an assignment, {assignment['assignment']} for {assignment['module']} due on the {assignment['date']}. " \
                           f"This assignment is worth {assignment['percentage'] * 100}% of the module's final grade."
-                webhook = get_webhook()
                 webhook.send(message)
         # Catch KeyErrors with spaces in sheet
         except KeyError:
             pass
 
 
-main(get_sheet_deet(), get_today_week())
+main()
