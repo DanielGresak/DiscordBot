@@ -32,7 +32,7 @@ def get_sheet_deet():
 
 def get_message(assignment):
     return f"We have an assignment, {assignment['assignment']} for {assignment['module']} due on the {assignment['date']}. " \
-                          f"This assignment is worth {assignment['percentage'] * 100}% of the module's final grade."
+                          f"This assignment is worth {round(assignment['percentage'] * 100)}% of the module's final grade."
 
 
 def main():
