@@ -4,7 +4,7 @@
 *Vlad Rakhmanin (his idea)*
 
 ### Background
-I decided to try make a bot that would read a sheet from Google Sheets and send a message if an assignment was dur within the next week.
+I decided to try make a bot that would read a sheet from Google Sheets and send a message if an assignment was due within the next week.
 I already had used the Sheety API so I copied the code from a previous project and made an Sheet with my college assignments and when it's due.
 
 The project is a bit messy and was rushed but I think it's a cool addition to my classes discord.
